@@ -1,4 +1,4 @@
-## University of California Berkley - MLAI Professional Certification Practical Application 1 --> Will the Customer Accept the Coupon
+## University of California Berkeley - MLAI Professional Certification Practical Application 1 --> Will the Customer Accept the Coupon
 
 Goal of this assignment is to analyze coupon data provieded in .csv file 'data/coupon.csv' and identify patterns related to customers accepting driving coupons. 
 I will be using data cleaning/preperation, visualization and other steps to arrive at observation and hypothesis
