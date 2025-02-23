@@ -3,7 +3,7 @@
 In this assignment, we aim to develop a predictive model for estimating used car prices leveraging a vehicles.csv dataset. This dataset contains various car attributes like mileage, year of manufacture, make, model,transmission, and additional features. Model once developed should be able to estimate price of a used car and aid car dealerships in identifying what consumers value in a car so informed decisions can be made.
 
 This assignment submission has following artifacts
-* Link to [Jupyter Notebook](practical_application_2.ipynb)
+* Link to [Jupyter Notebook](Practical_Application_2.ipynb)
 * Link to [Data Folder](data/)
 * Link to [Images Folder](images/)
 * Link to [License File](LICENSE.md)
