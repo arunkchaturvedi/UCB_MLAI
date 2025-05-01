@@ -53,7 +53,6 @@ Can Machine Learning models effectively identify malicious network traffic - Wha
 
 #### Outline of project
 * [Jupyter notebook](network_anomaly_detection.ipynb)
-* [Data folder](data/)
 * [License File](LICENSE.md)
 
 ##### Contact and Further Information
