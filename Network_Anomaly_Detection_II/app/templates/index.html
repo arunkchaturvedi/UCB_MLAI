@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Network Anomaly Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+        .recommendation {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #e7f5ff;
+            border-left: 4px solid #339af0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Network Anomaly Predictor</h1>
+        <form method="POST" id="predictionForm">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="AaA" class="form-label">Source IP</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Source Port</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Destination IP</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Destination Port</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Protocol</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Timestamp</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Flow Duration</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Total Fwd Packets </label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Total Backward Packets </label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Total Length of Fwd Packets</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Total Length of Bwd Packets</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Fwd Packet Length Max</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Fwd Packet Length Min</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Fwd Packet Length Mean</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Fwd Packet Length Std</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Bwd Packet Length Max</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Bwd Packet Length Min</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                    <label for="LoR" class="form-label">Bwd Packet Length Mean</label>
+                    <input type="number" class="form-control" id="LoR" name="LoR" required step="any">
+                    <label for="AaA" class="form-label">Bwd Packet Length Std</label>
+                    <input type="number" class="form-control" id="AaA" name="AaA" required step="any">
+                </div>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Predict Anomaly</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+            </div>
+        </form>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Clear form fields on page load
+        window.onload = function() {
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+            if (!document.referrer) {
+                clearForm();
+            }
+        }
+
+        // Function to clear the form
+        function clearForm() {
+            document.getElementById('predictionForm').reset();
+            // Remove results if they exist
+            const result = document.querySelector('.result');
+            const recommendation = document.querySelector('.recommendation');
+            if (result) result.style.display = 'none';
+            if (recommendation) recommendation.style.display = 'none';
+        }
+    </script>
+</body>
+</html> 
