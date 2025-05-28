@@ -8,7 +8,6 @@ app = Flask(__name__)
 model = None
 
 def load_model():
-    """Load the trained model from disk."""
     global model
     global N_FEATURES_EXPECTED
     model_path = '/models/xgboost_classifier.joblib'
@@ -26,8 +25,6 @@ def load_model():
 
 @app.route('/')
 def home():
-    """Renders the home page with a form for input."""
-    # Pass the number of features to the template
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
@@ -37,8 +34,6 @@ def predict():
         return jsonify({'error': 'Model not loaded.'}), 500
 
     try:
-        # Get data from the POST request (form)
-        # The form should send feature0, feature1, ..., featureN-1
         input_features = []
         for i in range(N_FEATURES_EXPECTED):
             feature_value = request.form.get(f'feature{i}')
@@ -56,9 +51,6 @@ def predict():
         prediction_proba = model.predict_proba(final_features) # Probabilities for each class
         prediction = model.predict(final_features) # Class label
 
-        # Prepare response
-        # prediction_proba[0][1] is the probability of the positive class (class 1)
-        # prediction[0] is the predicted class label (0 or 1)
         response = {
             'predicted_class': int(prediction[0]),
             'probability_class_0': float(prediction_proba[0][0]),
@@ -81,5 +73,5 @@ if __name__ == '__main__':
         print("Created 'templates' directory. Please put your index.html file there.")
 
     print(f"Starting Flask app. Open your browser to http://127.0.0.1:5000/")
-    app.run(debug=True, host='0.0.0.0') # host='0.0.0.0' makes it accessible on your network
+    app.run(debug=True, host='0.0.0.0')
 
